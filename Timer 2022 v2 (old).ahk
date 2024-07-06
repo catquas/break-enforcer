@@ -15,7 +15,7 @@ ExitFunc(ExitReason, ExitCode)
 }
 
 
-#include C:\Users\buxton_b\OneDrive - US Department of Labor - BLS\Desktop\AHK\devicelist.ahk
+;#include C:\Users\buxton_b\OneDrive - US Department of Labor - BLS\Desktop\AHK\devicelist.ahk
 
 ;Set times for things (default 25, 60, 20, 3)
 cyclemin := 25 ;overall break timer cycle length
@@ -23,7 +23,7 @@ warn1sec := 60 ;1st warning, seconds before end
 warn2sec := 15 ;2nd warning, seconds before end
 breakmin := 3 ;length of required break in minutes
 extendmin := 2 ;length of extension to time limit triggered by hotkey (in minutes)
-pwd = y523zc459711462Cat? ;lockscreen password
+pwd = 808595103267Cat! ;lockscreen password
 
 ;Compute miliseconds based on set times
 step1sec := (cyclemin * 60 * 1000) - (warn1sec * 1000)
@@ -91,7 +91,7 @@ if (firstinput = 0) {
 }
 ; If keyboard or mouse used when not on break, then start break timer
 if (a_timeidlephysical < 2000 and on_break = 0 and timer = 0) {
-	progress, zh0 fs70 ctAqua cwBlue w800 x100 y100, Starting Break Time Loop
+	progress, zh0 fs70 ctAqua cwBlue w800, Starting Break Time Loop
 	sleep 1000
 	progress, off
 	timer = 1
@@ -120,7 +120,7 @@ return
 ;first warning triggers at end of step1 timer, and then starts step2 timer
 step1kvm:
 SetTimer, step1kvm, Off
-progress, zh0 fs70 ctAqua cwBlue w800 x100 y100, %warn1sec% Second Warning (KVM)
+progress, zh0 fs70 ctAqua cwBlue w800, %warn1sec% Second Warning (KVM)
 extendable = 0
 sleep 5000
 progress, off
@@ -130,7 +130,7 @@ return
 ;first warning triggers at end of step1 timer, and then starts step2 timer
 step1:
 SetTimer, step1, Off
-progress, zh0 fs70 ctAqua cwBlue w800 x100 y100, %warn1sec% Second Warning
+progress, zh0 fs70 ctAqua cwBlue w800, %warn1sec% Second Warning
 extendable = 1
 sleep 5000
 progress, off
@@ -140,7 +140,7 @@ return
 ;second warning triggers at end of step2 timer, and then starts step3 timer
 step2:
 SetTimer, step2, Off
-progress, zh0 fs70 ctAqua cwBlue w800 x100 y100, %warn2sec% Second Warning
+progress, zh0 fs70 ctAqua cwBlue w800, %warn2sec% Second Warning
 ;sleep 5000
 ;progress, off
 SetTimer, step3, %step3sec%
@@ -152,14 +152,14 @@ loop %countdown% {
 		break
 	}
 	secleft := warn2sec - a_index 
-	progress, zh0 fs70 ctAqua cwBlue w800 x100 y100, %secleft% Second Warning
+	progress, zh0 fs70 ctAqua cwBlue w800, %secleft% Second Warning
 }
 return
 
 ;final warning triggers at end of step3 timer
 step3:
 SetTimer, step3, Off
-progress, zh0 fs70 ctYellow cwRed h1200 w2000, Take a Break! Go Outside!
+progress, zh0 fs70 ctYellow cwRed w800, Take a Break!
 on_break = 1 ;when on break is 1, typing or mousing triggers lockscreen
 extendable = 0
 return
