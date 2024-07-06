@@ -15,9 +15,9 @@ You can still shut down your computer whilte the lockscreen is up, and not much 
 - Autohotkey 2.0
 
 ## Options
-cyclemin : Overall break timer cycle length. Your break will start being enforced after you have been interacting with the computer for this amount of minutes, unless you extend.
-warn1sec : 1st warning that break is about to be enforced, number seconds before end of the cycle.
-warn2sec : 2nd warning that break is about to be enforced, number seconds before end of the cycle.
-breakmin : Length of break enforcement period in minutes
-extendmin : Number of minutes break can be postponed by using hotkey.
-pwd : Password to disable lock screen. Make it hard to remember or at least hard to type.
+- cyclemin : Overall break timer cycle length. Your break will start being enforced after you have been interacting with the computer for this amount of minutes, unless you extend.
+- warn1sec : 1st warning that break is about to be enforced, number seconds before end of the cycle.
+- warn2sec : 2nd warning that break is about to be enforced, number seconds before end of the cycle.
+- breakmin : Length of break enforcement period in minutes
+- extendmin : Number of minutes break can be postponed by using hotkey.
+- pwd : Password to disable lock screen. Make it hard to remember or at least hard to type.
